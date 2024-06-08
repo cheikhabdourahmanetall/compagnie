@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>COMPAGNY</display-name>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>LogoutServlet</display-name>
+  	<servlet-name>LogoutServlet</servlet-name>
+  	<servlet-class>com.groupeisi.compagny.controller.LogoutServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>AdminServlet</display-name>
+  	<servlet-name>AdminServlet</servlet-name>
+  	<servlet-class>com.groupeisi.compagny.controller.AdminServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>LogoutServlet</servlet-name>
+  	<url-pattern>/LogoutServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AdminServlet</servlet-name>
+  	<url-pattern>/AdminServlet</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <error-page>
+		    <!-- Missing login -->
+		    <error-code>401</error-code>
+		    <location>/error.jsp</location>
+		</error-page>
+		<error-page>
+		    <!-- Forbidden directory listing -->
+		    <error-code>403</error-code>
+		    <location>/error.jsp</location>
+		</error-page>
+		<error-page>
+		    <!-- Missing resource -->
+		    <error-code>404</error-code>
+		    <location>/error.jsp</location>
+		</error-page>
+		<error-page>
+		    <!-- Uncaught exception -->
+		    <error-code>500</error-code>
+		    <location>/error.jsp</location>
+		</error-page>
+		<error-page>
+		    <!-- Unsupported servlet method -->
+		    <error-code>503</error-code>
+		    <location>/error.jsp</location>
+		</error-page>
+  
+  
+</web-app>
+
+
+
+
+
+	 
