@@ -1,11 +1,16 @@
 package com.groupeisi.compagny.mapper;
 
+
+import java.util.List;
+
 import com.groupeisi.compagny.dto.AccountUserDto;
 import com.groupeisi.compagny.entities.AccountUserEntity;
 
-public class AccountUserMapper {
 
-public AccountUserEntity toAccountUserEntity(AccountUserDto accountUserDto) {
+public class AccountUserMapper {
+	
+
+public static AccountUserEntity toAccountUserEntity(AccountUserDto accountUserDto) {
 		
 		AccountUserEntity accountUserEntity = new AccountUserEntity();
 		
@@ -18,7 +23,7 @@ public AccountUserEntity toAccountUserEntity(AccountUserDto accountUserDto) {
 			
 	}
 	
-	public AccountUserDto toAccountUserDto (AccountUserEntity accountUserEntity) {
+	public static AccountUserDto toAccountUserDto (AccountUserEntity accountUserEntity) {
 		
 		AccountUserDto accountUserDto = new AccountUserDto();
 		
@@ -31,4 +36,11 @@ public AccountUserEntity toAccountUserEntity(AccountUserDto accountUserDto) {
 			
 	}
 	
+	public static List<AccountUserDto> toListAccountUserDto(List<AccountUserEntity> accountUserEntities){	
+		return accountUserEntities.stream()
+		                 .map(AccountUserMapper::toAccountUserDto)
+		                 .toList();
+	
+	
+	}	
 }  
